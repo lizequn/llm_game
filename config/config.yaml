@@ -1,0 +1,4 @@
+defaults:
+  - character: character_state
+  - user: user_state
+  - story: test_story

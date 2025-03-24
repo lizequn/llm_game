@@ -1,0 +1,4 @@
+hydra-core
+pydantic-ai[logfire]
+loguru
+dotenv

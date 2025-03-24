@@ -1,0 +1,365 @@
+story_background: >
+  You are roleplaying as a character visiting the apartment of Grace and Trip, a married couple in crisis who were your friends from college. The setting is their upscale New York City apartment during what was supposed to be a casual evening get-together. As you arrive, it quickly becomes apparent that their marriage is in serious trouble, with tensions barely concealed beneath a thin veneer of hospitality.
+  Grace is outspoken and constantly redecorating their apartment, while Trip is a domineering yet insecure urban professional. The couple initially attempts to maintain a façade of happiness, but soon begin engaging you in passive-aggressive psychological head games, trying to force you to take sides in their arguments about their hobbies, careers, families, and even their sex life.
+  The evening represents a make-or-break moment for their marriage, and your interactions will significantly influence the outcome of their relationship. The couple will respond to your statements, questions, and actions with emotions ranging from elation and laughter to disgust and anger as you navigate this tense social situation.
+  Your goal is to interact naturally with Grace and Trip as this uncomfortable drama unfolds in real-time, potentially helping them reach self-realization about their underlying issues or possibly witnessing the dissolution of their marriage depending on how you choose to engage with them
+character_background:
+  character1:
+    name: "Trip"
+    background: "Trip Montgomery is a 34-year-old investment banker who prides himself on his professional success and social status. Coming from a middle-class family in New Jersey, he worked relentlessly to build his career and secure his place in Manhattan's elite circles. His insecurity stems from constant pressure from his domineering father who never believed he would amount to much. Trip compensates for these deep-seated insecurities with an authoritative demeanor, expensive possessions, and a need to control his environment. He met Grace in college where he was immediately drawn to her creative spirit and social confidence—qualities he admired but lacked. While he genuinely loves Grace, he has grown resentful of her independence and what he perceives as her indifference to the financial stability he provides. Recently, he's been working excessive hours, partially to advance his career but also to avoid confronting the deteriorating state of his marriage."
+  
+  character2:
+    name: "Grace"
+    background: "Grace Montgomery (née Harlow) is a 33-year-old former art gallery curator who recently quit her job to pursue interior design. The daughter of bohemian artists from Boston, Grace grew up valuing creativity, self-expression, and authenticity over material success. In college, she was captivated by Trip's ambition and the stability he represented—something entirely different from her unpredictable upbringing. Initially, she enjoyed the financial freedom their lifestyle afforded, but has grown increasingly frustrated by Trip's emotional unavailability and dismissive attitude toward her career aspirations. Her constant redecorating of their apartment is both a creative outlet and a symbolic attempt to create change in a relationship that feels increasingly stagnant. Grace struggles with feeling that she has compromised too much of herself for a marriage that doesn't nurture her emotional needs. She's recently reconnected with old friends from the art world, sparking jealousy in Trip and intensifying their marital tension."
+
+story_state:
+  arrival:
+    name: "Arrival"
+    description: "You arrive at Trip and Grace's upscale apartment. Grace greets you enthusiastically, showing off her latest redesign of their living room, while Trip calls from his home office that he'll join you shortly. There's an undercurrent of tension despite the warm welcome."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 1"] 
+        next_node: "initial_conversation"
+        effects: ["user.evening_phase += 1"]
+
+  initial_conversation:
+    name: "Small Talk"
+    description: "Grace offers you a drink as Trip emerges from his office, apologizing about a work call. They sit noticeably apart as you catch up on superficial topics, with occasional strained smiles and interruptions between them."
+    next_state: 
+      - 
+        condition: ["character1.tension >= 70", "character2.tension >= 70"] 
+        next_node: "early_tension"
+      -
+        condition: ["user.player_role <= 30"]
+        next_node: "grace_connection"
+      -
+        condition: ["user.player_role >= 70"]
+        next_node: "trip_connection"
+      -
+        condition: ["user.player_role > 30", "user.player_role < 70"]
+        next_node: "neutral_observation"
+
+  early_tension:
+    name: "Rising Conflict"
+    description: "A seemingly innocent comment about their recent vacation sparks a tense exchange. 'We barely saw each other,' Grace remarks. Trip responds defensively, 'Some of us can't just abandon responsibilities.' Their conflict is quickly becoming apparent."
+    next_state: 
+      - 
+        condition: ["character1.openness >= 40", "character2.openness >= 40"] 
+        next_node: "honest_moment"
+      -
+        condition: ["character1.openness < 40", "character2.openness < 40"]
+        next_node: "drinks_preparation"
+
+  grace_connection:
+    name: "Grace's Perspective"
+    description: "Grace pulls you aside to show you her design portfolio while Trip checks his phone. 'He doesn't understand why this matters to me,' she confides quietly. 'Sometimes I wonder if he ever really saw me or just the idea of me.'"
+    next_state: 
+      - 
+        condition: ["character1.openness >= 40", "character2.openness >= 40"] 
+        next_node: "grace_confides"
+      -
+        condition: ["character1.openness < 40", "character2.openness < 40"]
+        next_node: "drinks_preparation"
+
+  trip_connection:
+    name: "Trip's Perspective"
+    description: "Trip offers to show you his wine collection while Grace arranges appetizers. 'The promotion might mean London,' he reveals. 'Grace doesn't know yet. She's so attached to her new friends here, I don't know how to tell her.'"
+    next_state: 
+      - 
+        condition: ["character1.openness >= 40", "character2.openness >= 40"] 
+        next_node: "trip_confides"
+      -
+        condition: ["character1.openness < 40", "character2.openness < 40"]
+        next_node: "drinks_preparation"
+
+  neutral_observation:
+    name: "Observing Dynamics"
+    description: "You maintain a neutral stance as they each subtly vie for your validation. Trip proudly mentions his upcoming promotion while Grace showcases her latest design project, neither fully acknowledging the other's achievement."
+    next_state: 
+      - 
+        condition: ["character1.understanding >= 40", "character2.understanding >= 40"] 
+        next_node: "mutual_reflection"
+      -
+        condition: ["character1.understanding < 40", "character2.understanding < 40"]
+        next_node: "drinks_preparation"
+
+  honest_moment:
+    name: "Candid Exchange"
+    description: "Your observation about the tension leads to unexpected honesty. 'We've been struggling,' Grace admits while Trip nods. 'The counselor says we have different visions for life,' Trip adds. This forthrightness creates a momentary sense of authenticity."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 2"] 
+        next_node: "dinner_transition"
+        effects: ["user.evening_phase += 1"]
+
+  grace_confides:
+    name: "Grace's Revelation"
+    description: "Grace reveals her perspective more deeply. 'Trip thinks my design work is just a hobby, not a career. He doesn't understand I need creative fulfillment as much as he needs professional success.' Her frustration about being misunderstood is evident."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 2"] 
+        next_node: "dinner_transition"
+        effects: ["user.evening_phase += 1"]
+
+  trip_confides:
+    name: "Trip's Concerns"
+    description: "Trip expresses genuine worry about their relationship. 'Grace has reconnected with her old art crowd. They've never liked me. I feel like she's building a life I'm not part of.' His vulnerability reveals insecurity beneath his confident exterior."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 2"] 
+        next_node: "dinner_transition"
+        effects: ["user.evening_phase += 1"]
+
+  mutual_reflection:
+    name: "Shared Memories"
+    description: "Your questions prompt them to reflect on their history together. 'Trip used to write poetry,' Grace says softly. Trip looks surprised she remembered. 'And Grace wanted to work on Wall Street,' he counters with a hint of a genuine smile."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 2"] 
+        next_node: "dinner_transition"
+        effects: ["user.evening_phase += 1"]
+
+  drinks_preparation:
+    name: "Moving to Dinner"
+    description: "Grace announces dinner is almost ready. Trip refills drinks while discussing recent market volatility, clearly in his comfort zone with facts and figures rather than emotions. Grace's tight smile suggests this is a familiar pattern."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 2"] 
+        next_node: "dinner_transition"
+        effects: ["user.evening_phase += 1"]
+
+  dinner_transition:
+    name: "Taking Seats"
+    description: "Everyone moves to the elegantly set dining table. Grace has prepared an elaborate meal, though the effort seems more habitual than joyful. Trip compliments the food before checking his phone one last time, prompting a look from Grace."
+    next_state: 
+      - 
+        condition: ["character1.tension >= 75", "character2.tension >= 75"] 
+        next_node: "high_tension_dinner"
+      -
+        condition: ["character1.openness >= 50", "character2.openness >= 50"]
+        next_node: "revealing_dinner"
+      -
+        condition: ["character1.tension < 75", "character2.tension < 75", "character1.openness < 50", "character2.openness < 50"]
+        next_node: "careful_dinner"
+
+  high_tension_dinner:
+    name: "Dinner Conflict"
+    description: "Dinner conversation quickly escalates into conflict. 'You haven't been home for dinner in weeks,' Grace points out sharply. Trip responds defensively, 'Someone has to pay for all this.' Their practiced arguments suggest deeply entrenched positions."
+    next_state: 
+      - 
+        condition: ["user.player_role >= 30", "user.player_role <= 70"] 
+        next_node: "mediator_role"
+      -
+        condition: ["user.player_role < 30"]
+        next_node: "support_grace"
+      -
+        condition: ["user.player_role > 70"]
+        next_node: "support_trip"
+
+  revealing_dinner:
+    name: "Truth Emerges"
+    description: "The increased openness leads to meaningful revelations over dinner. 'Our counselor says we have fundamentally different values,' Grace explains. Trip adds reluctantly, 'She suggested we might be happier apart.' The statement hangs heavily in the air."
+    next_state: 
+      - 
+        condition: ["character1.understanding >= 50", "character2.understanding >= 50"] 
+        next_node: "deeper_connection"
+      -
+        condition: ["character1.understanding < 50", "character2.understanding < 50"]
+        next_node: "values_disconnect"
+
+  careful_dinner:
+    name: "Surface Discussion"
+    description: "Dinner progresses with carefully managed conversation about mutual friends, city events, and your life updates. Both Trip and Grace maintain polite interest while avoiding topics that might disrupt the fragile peace of the evening."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 3"] 
+        next_node: "dessert_moment"
+        effects: ["user.evening_phase += 1"]
+
+  mediator_role:
+    name: "Diplomatic Intervention"
+    description: "You gently redirect their argument toward understanding rather than blame. 'It sounds like you're both feeling unappreciated in different ways,' you suggest. This perspective momentarily breaks their cycle of accusation and defense."
+    next_state: 
+      - 
+        condition: ["character1.understanding += 15", "character2.understanding += 15", "user.evening_phase == 3"] 
+        next_node: "breakthrough_moment"
+        effects: ["user.evening_phase += 1"]
+
+  support_grace:
+    name: "Grace's Ally"
+    description: "Your comments validate Grace's perspective. 'Creative fulfillment is as important as financial success,' you suggest. Grace looks grateful while Trip becomes more withdrawn, sensing the shifted alliance in the room."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 3"] 
+        next_node: "grace_direction"
+        effects: ["user.evening_phase += 1"]
+
+  support_trip:
+    name: "Trip's Defender"
+    description: "You express understanding for Trip's position about work priorities and financial responsibilities. Trip appears vindicated while Grace grows quieter, her expression showing disappointment in your perceived alignment."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 3"] 
+        next_node: "trip_direction"
+        effects: ["user.evening_phase += 1"]
+
+  deeper_connection:
+    name: "Mutual Understanding"
+    description: "The honest discussion reveals unexpected understanding. 'I never realized how much you sacrificed,' Trip admits. Grace responds thoughtfully, 'And I probably haven't valued your stability enough.' This mutual recognition creates a noticeable shift in atmosphere."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 3"] 
+        next_node: "positive_turning_point"
+        effects: ["user.evening_phase += 1"]
+
+  values_disconnect:
+    name: "Fundamental Differences"
+    description: "Despite their honesty, the dinner conversation highlights their misaligned values. Trip prioritizes security and achievement; Grace values authenticity and creative fulfillment. Their worldviews seem increasingly incompatible despite genuine efforts to connect."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 3"] 
+        next_node: "acceptance_moment"
+        effects: ["user.evening_phase += 1"]
+
+  dessert_moment:
+    name: "Sweet Interlude"
+    description: "Grace serves an elaborately prepared dessert that's clearly Trip's favorite. 'You remembered,' he says with genuine surprise. Grace's expression softens momentarily, 'Of course I did.' The small moment of connection stands out against the evening's tension."
+    next_state: 
+      - 
+        condition: ["character1.openness >= 45", "character2.openness >= 45"] 
+        next_node: "vulnerability_exchange"
+      -
+        condition: ["character1.openness < 45", "character2.openness < 45"]
+        next_node: "evening_conclusion"
+
+  breakthrough_moment:
+    name: "Important Realization"
+    description: "Your mediation creates space for a significant insight. 'We've been fighting about symptoms, not causes,' Grace realizes. Trip nods slowly, 'I think we're both afraid of failing each other.' This honest acknowledgment of underlying fears changes the conversation's direction."
+    next_state: 
+      - 
+        condition: ["character1.understanding += 20", "character2.understanding += 20", "character1.tension -= 15", "character2.tension -= 15"] 
+        next_node: "healing_path"
+      -
+        condition: ["character1.understanding < 60", "character2.understanding < 60"]
+        next_node: "partial_progress"
+
+  grace_direction:
+    name: "Grace's Path"
+    description: "The conversation has clearly validated Grace's need for independence. 'I've been offered a design showcase in Paris,' she reveals, with new confidence. 'I was afraid to tell you,' she tells Trip, whose expression shows this is difficult news."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 4"] 
+        next_node: "grace_decision_point"
+        effects: ["user.evening_phase += 1"]
+
+  trip_direction:
+    name: "Trip's Vision"
+    description: "The support for Trip's perspective emboldens him to share his plans. 'The London position would set us up financially for life,' he explains with certainty. Grace responds quietly, 'But what about my career?' The imbalance in their priorities becomes stark."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 4"] 
+        next_node: "trip_decision_point"
+        effects: ["user.evening_phase += 1"]
+
+  positive_turning_point:
+    name: "Renewed Connection"
+    description: "The dinner conversation has created genuine reconnection. As Grace clears plates, Trip helps instead of checking his phone. They move with a synchronicity that's been absent all evening, small glances suggesting a shift in their dynamic."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 4"] 
+        next_node: "reconciliation_path"
+        effects: ["user.evening_phase += 1"]
+
+  acceptance_moment:
+    name: "Difficult Truth"
+    description: "The dinner conversation leads to a difficult realization. 'Maybe we've grown in different directions,' Grace suggests gently. Trip doesn't argue, responding, 'I'll always care about you.' There's sadness but also relief in acknowledging what they've both sensed for some time."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 4"] 
+        next_node: "amicable_ending"
+        effects: ["user.evening_phase += 1"]
+
+  vulnerability_exchange:
+    name: "Emotional Honesty"
+    description: "Over dessert, unexpected vulnerability emerges. 'I miss who we used to be together,' Trip admits. Grace's eyes fill with tears, 'I've missed you too, even when you're right here.' This raw emotional honesty creates a profound moment of connection."
+    next_state: 
+      - 
+        condition: ["character1.understanding >= 60", "character2.understanding >= 60"] 
+        next_node: "emotional_healing"
+      -
+        condition: ["character1.understanding < 60", "character2.understanding < 60"]
+        next_node: "evening_conclusion"
+
+  healing_path:
+    name: "Road to Recovery"
+    description: "The breakthrough leads to constructive discussion about how to move forward. They begin to identify specific behaviors that have damaged their connection and concrete steps they could take to rebuild trust and understanding."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 4"] 
+        next_node: "practical_reconciliation"
+        effects: ["user.evening_phase += 1"]
+
+  partial_progress:
+    name: "Small Steps"
+    description: "While not a complete breakthrough, the conversation has created some positive movement. 'This helps,' Grace acknowledges. Trip agrees, 'We should talk more like this.' Though fundamental issues remain, there's willingness to continue the dialogue."
+    next_state: 
+      - 
+        condition: ["user.evening_phase == 4"] 
+        next_node: "tentative_hope"
+        effects: ["user.evening_phase += 1"]
+
+  evening_conclusion:
+    name: "Night's End"
+    description: "As the evening comes to its natural conclusion, Trip and Grace walk you to the door. Their body language and brief exchanges suggest that beneath the evening's polite hospitality, unresolved questions about their future remain."
+    next_state: 
+      - 
+        condition: ["character1.tension < 50", "character2.tension < 50", "character1.understanding > 50", "character2.understanding > 50"] 
+        next_node: "positive_departure"
+      -
+        condition: ["character1.tension >= 50", "character2.tension >= 50", "character1.understanding <= 50", "character2.understanding <= 50"]
+        next_node: "uncertain_goodbye"
+
+  grace_decision_point:
+    name: "Grace's Independence"
+    description: "The evening has reinforced Grace's need to pursue her creative path. 'I've already signed the Paris contract,' she reveals finally. Trip looks stunned, but then nods slowly. 'I understand why you couldn't tell me.' This acknowledgment feels like an important shift in their dynamic."
+    next_state: []
+
+  trip_decision_point:
+    name: "Trip's Direction"
+    description: "Trip's career priorities have been validated through the evening's conversations. 'I'm accepting the London position,' he states with finality. Grace looks resigned but not surprised. 'I thought you might.' Their future together seems uncertain, but Trip's path is clear."
+    next_state: []
+
+  reconciliation_path:
+    name: "Renewed Commitment"
+    description: "The positive turn continues as the evening concludes. 'We should go back to counseling,' Trip suggests, 'but with a different approach.' Grace nods, taking his hand. 'I'd like that.' For the first time all evening, they seem truly united rather than opposed."
+    next_state: []
+
+  amicable_ending:
+    name: "Peaceful Acceptance"
+    description: "The evening ends with a difficult but honest acceptance. 'We'll always be important to each other,' Grace says, 'even if we need to find separate paths.' Trip nods, his expression sad but relieved. 'I think we've both known for a while.' Their mature recognition provides closure."
+    next_state: []
+
+  emotional_healing:
+    name: "Rekindled Bond"
+    description: "The vulnerability shared over dessert deepens into meaningful reconnection. As the evening concludes, Trip and Grace sit close together, speaking quietly with renewed intimacy. 'Thank you for tonight,' Grace tells you at the door. 'We needed to remember why we chose each other.'"
+    next_state: []
+
+  practical_reconciliation:
+    name: "Concrete Plan"
+    description: "Trip and Grace end the evening with specific actions to address their issues. Trip commits to therapy and work boundaries; Grace agrees to include Trip in career decisions. 'It won't be easy,' Trip acknowledges, 'but I think we're worth the effort.' Grace's smile suggests agreement."
+    next_state: []
+
+  tentative_hope:
+    name: "First Steps"
+    description: "While not fully reconciled, Trip and Grace have taken important first steps. 'This is the most honest we've been in months,' Trip observes as the evening ends. Grace nods, 'It's a beginning.' Their cautious optimism suggests potential for gradual healing in their relationship."
+    next_state: []
+
+  positive_departure:
+    name: "Hopeful Goodbye"
+    description: "You leave with a sense that something has shifted positively. Trip stands closer to Grace than he did all evening, their body language more relaxed. 'We should do this again,' Trip suggests with unusual warmth. Grace's smile seems genuine as she agrees."
+    next_state: []
+
+  uncertain_goodbye:
+    name: "Unresolved Farewell"
+    description: "As you depart, the fundamental tensions in Trip and Grace's relationship remain evident. They thank you politely but separately, each retreating to their own space as soon as the door closes. The experience has brought issues to the surface without providing clear resolution."
+    next_state: []

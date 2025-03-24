@@ -1,0 +1,35 @@
+# Core Relationship States
+tension:
+  desc: "The level of tension between Trip and Grace"
+  min: 0
+  max: 100
+  default: 60
+  rules:
+    0-30: "Calm and collected conversation"
+    31-60: "Underlying tension with occasional flare-ups"
+    61-80: "High tension with frequent arguments"
+    81-100: "Near-breaking point with hostile exchanges"
+
+openness:
+  desc: "Willingness of both characters to be honest and vulnerable"
+  min: 0
+  max: 100
+  default: 25
+  rules:
+    0-30: "Guarded, only discussing surface-level topics"
+    31-60: "Occasionally revealing true feelings"
+    61-80: "Openly discussing relationship issues"
+    81-100: "Complete emotional vulnerability and honesty"
+
+
+understanding:
+  desc: "How well Trip and Grace understand each other's perspectives"
+  min: 0
+  max: 100
+  default: 30
+  rules:
+    0-30: "Completely misunderstanding each other's needs"
+    31-60: "Beginning to acknowledge different viewpoints"
+    61-80: "Actively listening and empathizing"
+    81-100: "Deep mutual understanding and empathy"
+

@@ -1,0 +1,26 @@
+# Player Influence
+player_role:
+  desc: "Whether player is perceived as neutral or taking sides"
+  min: 0
+  max: 100
+  default: 50
+  rules:
+    0-30: "Allied with Grace"
+    31-70: "Maintaining neutral mediator role"
+    71-100: "Allied with Trip"
+
+
+# Narrative Structure
+evening_phase:
+  desc: "The progression of the evening's events"
+  min: 1
+  max: 5
+  default: 1
+  no_analyse: True
+  rules:
+    "1": "Arrival and initial conversation"
+    "2": "Pre-dinner drinks and increasing openness"
+    "3": "Dinner and substantive discussion"
+    "4": "After-dinner confrontation of key issues"
+    "5": "Evening conclusion and relationship decision point"
+
