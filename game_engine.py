@@ -11,7 +11,7 @@ from loguru import logger
 
 class ConversationOutput(BaseModel):
     """Structured output for a conversation between characters"""
-    dialogue: list[str] = Field(description="The generated conversation between characters")
+    dialogue: list[str] = Field(description="The generated conversation between characters format as Speaker: Utterance")
     situation_summary: str = Field(description="A brief summary of the current situation in one to two sentences")
 
 
@@ -214,41 +214,7 @@ async def run_interactive():
             break
 
 
-async def run_demo():
-    """Run a simple demo with predefined user inputs"""
-    engine = GameEngine()
-    
-    # Start the story
-    await engine.start_story()
-    
-    # Predefined user responses
-    responses = [
-        "The room looks beautiful, Grace. And Trip, it's good to see you too. How have you both been?",
-        "It sounds like you've both been busy. How is your design work going, Grace?",
-        "That sounds exciting! And Trip, how's work been for you lately?"
-    ]
-    
-    # Process each response
-    for response in responses:
-        print(f"\nYour response: {response}")
-        await engine.process_user_input(response)
-        
-        # Print current states
-        states = engine.get_character_states()
-        print("\nCurrent States:")
-        for char_id, state_values in states.items():
-            if char_id != "user":
-                print(f"{char_id}: {state_values}")
-        print(f"User: {states.get('user', {})}")
-
-
 if __name__ == "__main__":
     import asyncio
+    asyncio.run(run_interactive())
     
-    # Choose which mode to run
-    interactive_mode = True
-    
-    if interactive_mode:
-        asyncio.run(run_interactive())
-    else:
-        asyncio.run(run_demo())

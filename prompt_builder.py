@@ -95,16 +95,16 @@ class PromptBuilder:
         
         # Define the conversation prompt template
         self.conversation_template = LLMPromptTemplate("""
-You are an AI assistant helping to generate dialogue waiting User's response for an interactive narrative game.
+You are an AI assistant helping to generate dialogue between characters for an interactive narrative game.
 
 Based on the following history and context about the story, characters, user, and their current states,
-generate a realistic conversation snippet that reflects the current situation and character dynamics.
-                                                       
-History:
-{history}
+generate a realistic conversation snippet that reflects the current situation and character dynamics.                                                   
                                                        
 Context:
 {context}
+                                                       
+History:
+{history}
 
 Generate a conversation snippet between the characters that:
 1. Reflects the current story node and situation
@@ -113,10 +113,9 @@ Generate a conversation snippet between the characters that:
 4. Maintains appropriate tension and dynamics based on character states
 5. Takes into account the user's current state and preferences
 6. Feels natural and realistic
-7. End with open ended situation to wait for User's input.
+7. End with open ended situation to wait for User's response.
                                                        
-
-The conversation should be 3-8 exchanges between the characters and finally wait for user's response.
+The conversation should be 3-8 exchanges between the characters and finally wait for the user's response.
 """)
     
     def _build_character_prompts(self) -> Dict[str, CharacterPrompt]:

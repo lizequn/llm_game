@@ -1,0 +1,310 @@
+(d:\llm_game\llm_game\.conda) D:\llm_game\llm_game>d:/llm_game/llm_game/.conda/python.exe d:/llm_game/llm_game/game_engine.py
+2025-03-24 21:49:56.242 | INFO     | story_state:build_story_state:288 - Built StoryState with 39 nodes
+2025-03-24 21:49:56.510 | INFO     | story_state:start_story:67 - Story started at node: arrival
+You: It's great to see you both, the apartment looks amazing, Grace. I love the new decor.
+Grace: Thank you, I've been working on it for weeks. Trip, aren't you going to join us?
+Trip: (from his office) Just a minute, I'm on a call. (pauses) You know how it is.
+Grace: (laughs nervously) Yes, work never ends for some people. Can I get you a drink?
+You: Sure, a glass of wine would be great, thanks.
+Trip: (entering the room) So, what do you think of the new setup? Grace has been... rearranging things.
+Grace: (smiling tightly) Oh, Trip, it's just a little something I've been playing with. Don't mind him, he's just stressed about work.
+
+You arrive at Trip and Grace's apartment, and despite the warm welcome, there's an undercurrent of tension. As you engage with them, their personalities and the strain on their relationship begin to surface.
+
+
+Your response: I love the new arrange, Trip you really need to thank Grace for her hard work.
+2025-03-24 21:51:24.554 | INFO     | conversation_analyse:analyze_conversation:236 - Conversation analysis complete: The user's response has increased tension and decreased openness between Trip and Grace, while the user's player role has shifted slightly towards being more allied with Grace.
+2025-03-24 21:51:24.554 | INFO     | conversation_analyse:apply_state_changes:261 - character1 tension change: 10 - The user's comment about Trip needing to thank Grace for her hard work may be perceived as criticizing Trip and taking Grace's side, increasing tension between them.
+2025-03-24 21:51:24.554 | INFO     | conversation_analyse:apply_state_changes:261 - character1 openness change: -5 - Trip may feel slightly defensive or embarrassed by the user's comment, leading to a decrease in openness.
+2025-03-24 21:51:24.554 | INFO     | conversation_analyse:apply_state_changes:261 - character1 understanding change: 0 - The user's comment does not significantly affect understanding between Trip and Grace.
+2025-03-24 21:51:24.554 | INFO     | character_state:update_state:71 - update tension to 70
+2025-03-24 21:51:24.554 | INFO     | character_state:update_state:71 - update openness to 20
+2025-03-24 21:51:24.554 | INFO     | character_state:update_state:71 - update understanding to 30
+2025-03-24 21:51:24.554 | INFO     | conversation_analyse:apply_state_changes:261 - character2 tension change: 5 - Grace may feel slightly validated by the user's comment, but also slightly anxious about Trip's potential reaction, increasing tension within her.
+2025-03-24 21:51:24.554 | INFO     | conversation_analyse:apply_state_changes:261 - character2 openness change: 5 - Grace may feel more open and appreciated due to the user's acknowledgement of her hard work.
+2025-03-24 21:51:24.554 | INFO     | conversation_analyse:apply_state_changes:261 - character2 understanding change: 0 - The user's comment does not significantly affect understanding within Grace.
+2025-03-24 21:51:24.554 | INFO     | character_state:update_state:71 - update tension to 65
+2025-03-24 21:51:24.554 | INFO     | character_state:update_state:71 - update openness to 30
+2025-03-24 21:51:24.554 | INFO     | character_state:update_state:71 - update understanding to 30
+2025-03-24 21:51:24.554 | INFO     | conversation_analyse:apply_state_changes:278 - User player_role change: -10 - The user's comment appears to take Grace's side and praise her efforts, potentially shifting their player role to be more allied with Grace.
+2025-03-24 21:51:24.554 | INFO     | character_state:update_state:71 - update player_role to 40
+2025-03-24 21:51:24.554 | INFO     | conversation_analyse:apply_state_changes:284 - Applied all state changes from conversation analysis
+2025-03-24 21:51:24.554 | INFO     | __main__:process_user_input:135 - Conversation analysis: The user's response has increased tension and decreased openness between Trip and Grace, while the user's player role has shifted slightly towards being more allied with Grace.
+2025-03-24 21:51:24.554 | INFO     | character_state:update_state:71 - update evening_phase to 2
+2025-03-24 21:51:24.558 | INFO     | story_state:_apply_effect:204 - Applied effect: user.evening_phase += 1, new value: 2
+2025-03-24 21:51:24.558 | INFO     | story_state:advance_story:240 - Advanced to node: initial_conversation
+2025-03-24 21:51:24.558 | INFO     | __main__:process_user_input:143 - Advanced to new story node: Small Talk
+Trip: (smirking) Oh, I'm sure it's just a hobby, Grace. You know, a little something to keep her busy.
+Grace: (interrupting, her voice rising) Actually, it's not just a hobby, Trip. I'm considering starting my own design firm.
+Trip: (scoffing) That's cute, Grace. You think you can just start a business like that?
+Grace: (defensive) Why not? I have the talent and the passion. And I've been talking to some people in the industry...
+Trip: (talking over her) Yeah, I'm sure your little art friends are just dying to invest in your new venture.
+Grace: (anger flashing in her eyes) That's not fair, Trip. You have no idea what I'm capable of.
+Trip: (standing up, his voice rising) Oh, I think I do. You're capable of wasting a lot of money on foolish dreams.
+
+The conversation is becoming increasingly heated as Trip and Grace argue about her career aspirations, with Trip belittling her ideas and Grace growing defensive. The tension in the room is palpable, and it's clear that their argument is far from over. The user is left to decide how to intervene, or whether to let the argument escalate further.
+
+
+Current States:
+character1: {'tension': 70, 'openness': 20, 'understanding': 30}
+character2: {'tension': 65, 'openness': 30, 'understanding': 30}
+User: {'player_role': 40, 'evening_phase': 2}
+
+Your response: Wow  Trip, you need respect more on Grace. The new desgined living room, such wonderful design. Its amazing work, I am prode of you Grace. Trip, You need appology. I mean seriously.  
+2025-03-24 21:55:04.866 | INFO     | conversation_analyse:analyze_conversation:236 - Conversation analysis complete: The user's response has increased tension, decreased openness, and slightly increased understanding between characters, while shifting the user's role towards being more allied with Grace.
+2025-03-24 21:55:04.866 | INFO     | conversation_analyse:apply_state_changes:261 - character1 tension change: 10 - The user's criticism of Trip and praise of Grace has escalated the tension between them.
+2025-03-24 21:55:04.866 | INFO     | conversation_analyse:apply_state_changes:261 - character1 openness change: -5 - Trip's defensiveness and the user's taking of sides has reduced the openness between characters.
+2025-03-24 21:55:04.866 | INFO     | conversation_analyse:apply_state_changes:261 - character1 understanding change: 5 - The user's acknowledgment of Grace's design skills and criticism of Trip's behavior may have slightly increased understanding between characters, as it highlights the need for respect and appreciation.
+2025-03-24 21:55:04.866 | INFO     | character_state:update_state:71 - update tension to 80
+2025-03-24 21:55:04.866 | INFO     | character_state:update_state:71 - update openness to 15
+2025-03-24 21:55:04.866 | INFO     | character_state:update_state:71 - update understanding to 35
+2025-03-24 21:55:04.866 | INFO     | conversation_analyse:apply_state_changes:261 - character2 tension change: 12 - The user's response has further strained the relationship, with Trip feeling attacked and Grace feeling validated but also possibly more entrenched in her position.
+2025-03-24 21:55:04.866 | INFO     | conversation_analyse:apply_state_changes:261 - character2 openness change: -8 - The confrontation has led to decreased openness, as both characters become more defensive and less willing to listen to each other's perspectives.
+2025-03-24 21:55:04.866 | INFO     | conversation_analyse:apply_state_changes:261 - character2 understanding change: 3 - While the user's intervention may have increased understanding in some aspects, the overall tension and defensiveness have limited the potential for meaningful understanding between the characters.
+2025-03-24 21:55:04.866 | INFO     | character_state:update_state:71 - update tension to 77
+2025-03-24 21:55:04.866 | INFO     | character_state:update_state:71 - update openness to 22
+2025-03-24 21:55:04.866 | INFO     | character_state:update_state:71 - update understanding to 33
+2025-03-24 21:55:04.866 | INFO     | conversation_analyse:apply_state_changes:278 - User player_role change: -15 - The user's clear criticism of Trip and praise of Grace has shifted their role significantly towards being more allied with Grace, which may impact the dynamics of the conversation and the characters' perceptions of the user.
+2025-03-24 21:55:04.869 | INFO     | character_state:update_state:71 - update player_role to 25
+2025-03-24 21:55:04.869 | INFO     | conversation_analyse:apply_state_changes:284 - Applied all state changes from conversation analysis
+2025-03-24 21:55:04.869 | INFO     | __main__:process_user_input:135 - Conversation analysis: The user's response has increased tension, decreased openness, and slightly increased understanding between characters, while shifting the user's role towards being more allied with Grace.
+2025-03-24 21:55:04.869 | INFO     | story_state:advance_story:240 - Advanced to node: early_tension
+2025-03-24 21:55:04.869 | INFO     | __main__:process_user_input:143 - Advanced to new story node: Rising Conflict
+Grace: (tearfully) Thank you for standing up for me. It means a lot to have someone believe in me.
+Trip: (seething) Oh, great, now you're going to take their side?
+You: Trip, I'm just trying to be honest. Grace's designs are amazing and she deserves respect.
+Trip: (scoffing) Respect? You think a few pretty rooms deserve respect?
+Grace: (firmly) That's not what this is about, Trip. It's about you constantly belittling my dreams and aspirations.
+Trip: (raising his voice) And it's about you constantly expecting me to support your frivolous hobbies!
+Grace: (_matching his volume) Frivolous hobbies? You have no idea what it takes to be a designer, to be creative and innovative.
+
+The conversation has escalated into a heated argument between Trip and Grace, with the user attempting to defend Grace's designs and aspirations. The tension is palpable, and the situation is becoming increasingly unstable.
+
+
+Current States:
+character1: {'tension': 80, 'openness': 15, 'understanding': 35}
+character2: {'tension': 77, 'openness': 22, 'understanding': 33}
+User: {'player_role': 25, 'evening_phase': 2}
+
+Your response: Calm down Trip, I understand you are so busy this week. Lets forget those and have some food first? Grace, I am on you, you are brave.    
+2025-03-24 21:58:41.286 | INFO     | conversation_analyse:analyze_conversation:236 - Conversation analysis complete: The user attempts to calm the situation by suggesting they have food first and acknowledges Grace's bravery, slightly easing tension but also appearing to side with Grace.
+2025-03-24 21:58:41.286 | INFO     | conversation_analyse:apply_state_changes:261 - character1 tension change: -5 - The suggestion to calm down and have food may temporarily ease the tension between the characters, but the acknowledgment of Grace's bravery might be perceived as taking her side, which could maintain some level of tension.
+2025-03-24 21:58:41.286 | INFO     | conversation_analyse:apply_state_changes:261 - character1 openness change: 5 - By trying to shift the focus away from the argument, the user encourages a moment of openness, but it's limited by the underlying issues not being addressed.
+2025-03-24 21:58:41.286 | INFO     | conversation_analyse:apply_state_changes:261 - character1 understanding change: 2 - There's a slight increase in understanding as the user shows empathy towards Grace, but it's minimal because the deeper marital issues are not directly acknowledged or discussed.
+2025-03-24 21:58:41.286 | INFO     | character_state:update_state:71 - update tension to 75
+2025-03-24 21:58:41.286 | INFO     | character_state:update_state:71 - update openness to 20
+2025-03-24 21:58:41.286 | INFO     | character_state:update_state:71 - update understanding to 37
+2025-03-24 21:58:41.286 | INFO     | conversation_analyse:apply_state_changes:261 - character2 tension change: -3 - Similar to Trip, the tension slightly decreases due to the interruption of the argument, but his defensiveness might still simmer.
+2025-03-24 21:58:41.286 | INFO     | conversation_analyse:apply_state_changes:261 - character2 openness change: 4 - Trip might see the user's intervention as an opportunity to reflect on his behavior, slightly increasing openness.
+2025-03-24 21:58:41.286 | INFO     | conversation_analyse:apply_state_changes:261 - character2 understanding change: 1 - There's a small increase in understanding as Trip is forced to consider Grace's perspective through the user's comment.
+2025-03-24 21:58:41.286 | INFO     | character_state:update_state:71 - update tension to 74
+2025-03-24 21:58:41.286 | INFO     | character_state:update_state:71 - update openness to 26
+2025-03-24 21:58:41.286 | INFO     | character_state:update_state:71 - update understanding to 34
+2025-03-24 21:58:41.286 | INFO     | conversation_analyse:apply_state_changes:278 - User player_role change: -5 - The user's comment appears to slightly favor Grace, moving the user's role away from neutrality towards being more allied with Grace.
+2025-03-24 21:58:41.286 | INFO     | character_state:update_state:71 - update player_role to 20
+2025-03-24 21:58:41.286 | INFO     | conversation_analyse:apply_state_changes:284 - Applied all state changes from conversation analysis
+2025-03-24 21:58:41.286 | INFO     | __main__:process_user_input:135 - Conversation analysis: The user attempts to calm the situation by suggesting they have food first and acknowledges Grace's bravery, slightly easing tension but also appearing to side with Grace.
+2025-03-24 21:58:41.286 | INFO     | story_state:advance_story:240 - Advanced to node: drinks_preparation
+2025-03-24 21:58:41.286 | INFO     | __main__:process_user_input:143 - Advanced to new story node: Moving to Dinner
+Grace: (wiping away tears) I'm sorry, I think I'm just going to go check on dinner. It should be ready soon.
+Trip: (still visibly upset) Yeah, great, let's just sweep everything under the rug and pretend like nothing's wrong.
+Grace: (from the kitchen) Maybe if you actually listened to me and supported my dreams, we wouldn't be in this situation.
+Trip: (to you) You see how she is? Always so dramatic and emotional.
+You: (calmly) Trip, I think we should try to understand where Grace is coming from. She feels like you're not supporting her.
+Trip: (defensively) I do support her, but she needs to be realistic about her expectations. Starting a design firm is a huge risk.
+Grace: (returning with a forced smile) Dinner is ready, let's just... let's just eat, okay?
+
+The tension between Grace and Trip is palpable as they navigate their troubled marriage, with Grace feeling belittled and unsupported, and Trip struggling to understand and connect with her creative aspirations. The evening is at a breaking point, and the user's actions will significantly influence the outcome of their relationship.
+
+
+Current States:
+character1: {'tension': 75, 'openness': 20, 'understanding': 37}
+character2: {'tension': 74, 'openness': 26, 'understanding': 34}
+User: {'player_role': 20, 'evening_phase': 2}
+
+Your response: Lets have some food first. Wow who made those food, its looks fantastic! Its that you Grace? 
+2025-03-24 22:00:51.351 | INFO     | conversation_analyse:analyze_conversation:236 - Conversation analysis complete: The user's response helps to temporarily ease the tension by focusing on the dinner and giving a compliment, but it doesn't address the underlying issues between Grace and Trip.
+2025-03-24 22:00:51.367 | INFO     | conversation_analyse:apply_state_changes:261 - character1 tension change: -10 - The user's compliment on the food temporarily distracts from the tension and creates a brief moment of positivity, but the underlying issues remain.
+2025-03-24 22:00:51.367 | INFO     | conversation_analyse:apply_state_changes:261 - character1 openness change: 0 - The user's response doesn't encourage Grace to open up more about her feelings or concerns, so her openness level remains unchanged.
+2025-03-24 22:00:51.367 | INFO     | conversation_analyse:apply_state_changes:261 - character1 understanding change: 5 - By acknowledging Grace's effort in cooking, the user shows some understanding of her contributions to their relationship, but it's a minor step.
+2025-03-24 22:00:51.367 | INFO     | character_state:update_state:71 - update tension to 65
+2025-03-24 22:00:51.367 | INFO     | character_state:update_state:71 - update openness to 20
+2025-03-24 22:00:51.367 | INFO     | character_state:update_state:71 - update understanding to 42
+2025-03-24 22:00:51.367 | INFO     | conversation_analyse:apply_state_changes:261 - character2 tension change: -5 - Trip's tension level decreases slightly as the conversation shifts to a more neutral topic, but he remains defensive and insecure.
+2025-03-24 22:00:51.367 | INFO     | conversation_analyse:apply_state_changes:261 - character2 openness change: 0 - The user's response doesn't specifically encourage Trip to be more open about his feelings or concerns.
+2025-03-24 22:00:51.367 | INFO     | conversation_analyse:apply_state_changes:261 - character2 understanding change: 0 - The user's comment doesn't directly contribute to Trip's understanding of Grace's perspective or his own role in their marital issues.
+2025-03-24 22:00:51.367 | INFO     | character_state:update_state:71 - update tension to 69
+2025-03-24 22:00:51.367 | INFO     | character_state:update_state:71 - update openness to 26
+2025-03-24 22:00:51.367 | INFO     | character_state:update_state:71 - update understanding to 34
+2025-03-24 22:00:51.367 | INFO     | conversation_analyse:apply_state_changes:278 - User player_role change: -5 - The user's compliment on Grace's cooking could be seen as subtly taking her side or showing appreciation for her efforts, which might slightly decrease the user's alignment with Trip and increase their neutrality or alignment with Grace.
+2025-03-24 22:00:51.367 | INFO     | character_state:update_state:71 - update player_role to 15
+2025-03-24 22:00:51.367 | INFO     | conversation_analyse:apply_state_changes:284 - Applied all state changes from conversation analysis
+2025-03-24 22:00:51.367 | INFO     | __main__:process_user_input:135 - Conversation analysis: The user's response helps to temporarily ease the tension by focusing on the dinner and giving a compliment, but it doesn't address the underlying issues between Grace and Trip.
+2025-03-24 22:00:51.367 | INFO     | character_state:update_state:71 - update evening_phase to 3
+2025-03-24 22:00:51.367 | INFO     | story_state:_apply_effect:204 - Applied effect: user.evening_phase += 1, new value: 3
+2025-03-24 22:00:51.367 | INFO     | story_state:advance_story:240 - Advanced to node: dinner_transition
+2025-03-24 22:00:51.367 | INFO     | __main__:process_user_input:143 - Advanced to new story node: Taking Seats
+Grace: (nervously) Yes, I made the food. I hope you like it.
+Trip: (distracted) It looks great, dear. You always were a good cook.
+You: (trying to lighten the mood) This smells amazing, Grace. You're a talented chef.
+Grace: (forcing a smile) Thanks, I tried something new. Trip, can you please pass the salad?
+Trip: (irritated) Fine, here. (passes the salad)
+Grace: (her voice trembling) Thanks... So, how's the food?
+Trip: (critically) It's good, but a bit overseasoned, don't you think?
+You:?
+
+The evening is becoming increasingly tense as Trip and Grace's argument simmers just below the surface. The user tries to lighten the mood, but Trip's critical comment about the food sparks another potentially explosive moment.
+
+
+Current States:
+character1: {'tension': 65, 'openness': 20, 'understanding': 42}
+character2: {'tension': 69, 'openness': 26, 'understanding': 34}
+User: {'player_role': 15, 'evening_phase': 3}
+
+Your response: No I think its perfect. Complelity perfect. 
+2025-03-24 22:03:33.008 | INFO     | conversation_analyse:analyze_conversation:236 - Conversation analysis complete: The user's statement increases tension and decreases openness and understanding for Trip, while having the opposite effect on Grace. The user's response is seen as taking Grace's side, increasing their alliance with her.
+2025-03-24 22:03:33.009 | INFO     | conversation_analyse:apply_state_changes:261 - character1 tension change: 5 - The user's agreement with Grace on the food increases Trip's feeling of being opposed, raising tension
+2025-03-24 22:03:33.009 | INFO     | conversation_analyse:apply_state_changes:261 - character1 openness change: -10 - Trip feels his opinion is being dismissed, making him less open
+2025-03-24 22:03:33.009 | INFO     | conversation_analyse:apply_state_changes:261 - character1 understanding change: -10 - The user's statement makes Trip feel misunderstood, decreasing understanding
+2025-03-24 22:03:33.009 | INFO     | character_state:update_state:71 - update tension to 70
+2025-03-24 22:03:33.009 | INFO     | character_state:update_state:71 - update openness to 10
+2025-03-24 22:03:33.010 | INFO     | character_state:update_state:71 - update understanding to 32
+2025-03-24 22:03:33.010 | INFO     | conversation_analyse:apply_state_changes:261 - character2 tension change: -10 - Grace feels supported by the user's comment, reducing her tension
+2025-03-24 22:03:33.010 | INFO     | conversation_analyse:apply_state_changes:261 - character2 openness change: 10 - The user's positive feedback makes Grace more open to the conversation
+2025-03-24 22:03:33.010 | INFO     | conversation_analyse:apply_state_changes:261 - character2 understanding change: 10 - The user's agreement helps Grace feel understood, increasing understanding
+2025-03-24 22:03:33.010 | INFO     | character_state:update_state:71 - update tension to 59
+2025-03-24 22:03:33.010 | INFO     | character_state:update_state:71 - update openness to 36
+2025-03-24 22:03:33.010 | INFO     | character_state:update_state:71 - update understanding to 44
+2025-03-24 22:03:33.010 | INFO     | conversation_analyse:apply_state_changes:278 - User player_role change: -10 - The user's response is seen as taking Grace's side, decreasing their neutrality
+2025-03-24 22:03:33.011 | INFO     | character_state:update_state:71 - update player_role to 5
+2025-03-24 22:03:33.011 | INFO     | conversation_analyse:apply_state_changes:284 - Applied all state changes from conversation analysis
+2025-03-24 22:03:33.011 | INFO     | __main__:process_user_input:135 - Conversation analysis: The user's statement increases tension and decreases openness and understanding for Trip, while having the opposite effect on Grace. The user's response is seen as taking Grace's side, increasing their alliance with her.
+2025-03-24 22:03:33.013 | INFO     | story_state:advance_story:240 - Advanced to node: careful_dinner
+2025-03-24 22:03:33.013 | INFO     | __main__:process_user_input:143 - Advanced to new story node: Surface Discussion
+Grace: (nervously) I'm glad you like the food. I was hoping to start a cooking blog too, but Trip doesn't think it's a good idea.
+Trip: (rolling his eyes) Oh, great, another one of your harebrained schemes. You can't even keep a consistent design style in our apartment, how are you going to run a blog?
+You: (interrupting) Hey, I think that's a great idea, Grace. You're a talented cook and it could be a fun hobby.
+Trip: (scoffing) A hobby? You're enabling her, making her think she can just do whatever she wants without considering the practicalities.
+Grace: (frustrated) That's not fair, Trip. You're always so quick to shoot down my ideas without even considering how they might make me happy.
+Trip: (standing up) I'm just trying to be realistic, Grace. Someone has to be the adult in this relationship.
+Grace: (tearfully) Maybe if you were more supportive, I wouldn't feel like I'm drowning in this marriage.
+
+The tension between Trip and Grace is escalating as they argue about Grace's creative pursuits, with Trip being dismissive and Grace feeling unsupported. The user is trying to intervene and offer support to Grace, but Trip is resistant to the idea.
+
+
+Current States:
+character1: {'tension': 70, 'openness': 10, 'understanding': 32}
+character2: {'tension': 59, 'openness': 36, 'understanding': 44}
+User: {'player_role': 5, 'evening_phase': 3}
+
+Your response: While, building a blog is not that difficult, Trip. I understand your concern, but its just a blog, be relax.
+2025-03-24 22:06:34.012 | INFO     | conversation_analyse:analyze_conversation:236 - Conversation analysis complete: The user's response slightly reduces tension and increases openness between characters, while also affecting the user's neutrality
+2025-03-24 22:06:34.015 | INFO     | conversation_analyse:apply_state_changes:261 - character1 tension change: -8 - The user's comment diminishes Trip's confrontational stance, slightly easing the tension
+2025-03-24 22:06:34.015 | INFO     | conversation_analyse:apply_state_changes:261 - character1 openness change: 5 - By suggesting Trip should relax, the user encourages a more open attitude from Trip
+2025-03-24 22:06:34.015 | INFO     | conversation_analyse:apply_state_changes:261 - character1 understanding change: 3 - The user's attempt to downplay the issue helps Trip and Grace understand each other's perspectives slightly better
+2025-03-24 22:06:34.015 | INFO     | character_state:update_state:71 - update tension to 62
+2025-03-24 22:06:34.015 | INFO     | character_state:update_state:71 - update openness to 15
+2025-03-24 22:06:34.015 | INFO     | character_state:update_state:71 - update understanding to 35
+2025-03-24 22:06:34.015 | INFO     | conversation_analyse:apply_state_changes:261 - character2 tension change: -5 - Grace feels slightly less tense as the user supports her idea and critiques Trip's behavior
+2025-03-24 22:06:34.015 | INFO     | conversation_analyse:apply_state_changes:261 - character2 openness change: 4 - The user's support encourages Grace to be more open about her feelings and aspirations
+2025-03-24 22:06:34.015 | INFO     | conversation_analyse:apply_state_changes:261 - character2 understanding change: 2 - The interaction helps Grace understand that Trip's behavior is not entirely justified, increasing her self-awareness
+2025-03-24 22:06:34.015 | INFO     | character_state:update_state:71 - update tension to 54
+2025-03-24 22:06:34.015 | INFO     | character_state:update_state:71 - update openness to 40
+2025-03-24 22:06:34.015 | INFO     | character_state:update_state:71 - update understanding to 46
+2025-03-24 22:06:34.015 | INFO     | conversation_analyse:apply_state_changes:278 - User player_role change: -3 - The user's response leans slightly towards supporting Grace, reducing their neutrality
+2025-03-24 22:06:34.015 | INFO     | character_state:update_state:71 - update player_role to 2
+2025-03-24 22:06:34.015 | INFO     | conversation_analyse:apply_state_changes:284 - Applied all state changes from conversation analysis
+2025-03-24 22:06:34.015 | INFO     | __main__:process_user_input:135 - Conversation analysis: The user's response slightly reduces tension and increases openness between characters, while also affecting the user's neutrality
+2025-03-24 22:06:34.015 | INFO     | character_state:update_state:71 - update evening_phase to 4
+2025-03-24 22:06:34.015 | INFO     | story_state:_apply_effect:204 - Applied effect: user.evening_phase += 1, new value: 4
+2025-03-24 22:06:34.015 | INFO     | story_state:advance_story:240 - Advanced to node: dessert_moment
+2025-03-24 22:06:34.015 | INFO     | __main__:process_user_input:143 - Advanced to new story node: Sweet Interlude
+Grace: (sniffling) I just feel like I'm losing myself in this marriage, like I'm just a accessory to your success, Trip.
+Trip: (frustrated) That's not fair, Grace. I provide for you, I give you everything you want. What more do you need?
+You: (calmly) Trip, I think Grace is trying to say that she needs emotional support, not just financial security.
+Trip: (defensive) I do support her, but she's always so ungrateful. She never appreciates what I do for her.
+Grace: (tearfully) That's not true, Trip. I do appreciate you, but you never listen to me, you never try to understand what I want or need.
+Trip: (standing up) Fine, if you're so unhappy, maybe we should just take a break from each other. See if you can make it on your own.
+Grace: (alarmed) Trip, don't say that. You're just trying to hurt me.
+
+The conversation has reached a boiling point, with Trip and Grace on the verge of a breakdown in their relationship. The user's attempts to intervene have only seemed to escalate the situation, and now Trip is threatening to take a break from Grace.
+
+
+Current States:
+character1: {'tension': 62, 'openness': 15, 'understanding': 35}
+character2: {'tension': 54, 'openness': 40, 'understanding': 46}
+User: {'player_role': 2, 'evening_phase': 4}
+
+Your response: Trip you desreve it! You dont behave like a gental man.
+2025-03-24 22:08:22.223 | INFO     | conversation_analyse:analyze_conversation:236 - Conversation analysis complete: The conversation has taken a turn for the worse with the user's confrontational response, causing tension to increase and openness to decrease for Trip, while slightly increasing understanding for Grace as she feels validated by the user's statement. The user's neutrality has shifted towards being less allied with Trip.
+2025-03-24 22:08:22.223 | INFO     | conversation_analyse:apply_state_changes:261 - character1 tension change: 10 - Trip's defensiveness and hurtful comment have escalated the tension in the conversation
+2025-03-24 22:08:22.223 | INFO     | conversation_analyse:apply_state_changes:261 - character1 openness change: -5 - Trip's reaction to the user's criticism has caused him to become more closed off
+2025-03-24 22:08:22.223 | INFO     | conversation_analyse:apply_state_changes:261 - character1 understanding change: -3 - Trip's inability to see the user's point of view and his hurtful comment have decreased his understanding of the situation
+2025-03-24 22:08:22.223 | INFO     | character_state:update_state:71 - update tension to 72
+2025-03-24 22:08:22.223 | INFO     | character_state:update_state:71 - update openness to 10
+2025-03-24 22:08:22.223 | INFO     | character_state:update_state:71 - update understanding to 32
+2025-03-24 22:08:22.223 | INFO     | conversation_analyse:apply_state_changes:261 - character2 tension change: -2 - Grace feels validated by the user's statement and slightly less tense
+2025-03-24 22:08:22.223 | INFO     | conversation_analyse:apply_state_changes:261 - character2 openness change: 2 - Grace's emotions are acknowledged by the user, making her slightly more open
+2025-03-24 22:08:22.236 | INFO     | conversation_analyse:apply_state_changes:261 - character2 understanding change: 5 - The user's comment has helped Grace feel understood and validated
+2025-03-24 22:08:22.236 | INFO     | character_state:update_state:71 - update tension to 52
+2025-03-24 22:08:22.236 | INFO     | character_state:update_state:71 - update openness to 42
+2025-03-24 22:08:22.236 | INFO     | character_state:update_state:71 - update understanding to 51
+2025-03-24 22:08:22.236 | INFO     | conversation_analyse:apply_state_changes:278 - User player_role change: -8 - The user's confrontational response towards Trip has shifted their alliance away from him and more towards Grace or neutrality
+2025-03-24 22:08:22.236 | INFO     | character_state:update_state:71 - update player_role to 0
+2025-03-24 22:08:22.236 | INFO     | conversation_analyse:apply_state_changes:284 - Applied all state changes from conversation analysis
+2025-03-24 22:08:22.236 | INFO     | __main__:process_user_input:135 - Conversation analysis: The conversation has taken a turn for the worse with the user's confrontational response, causing tension to increase and openness to decrease for Trip, while slightly increasing understanding for Grace as she feels validated by the user's statement. The user's neutrality has shifted towards being less allied with Trip.
+2025-03-24 22:08:22.238 | INFO     | story_state:advance_story:240 - Advanced to node: evening_conclusion
+2025-03-24 22:08:22.238 | INFO     | __main__:process_user_input:143 - Advanced to new story node: Night's End
+Trip: (angrily) How dare you! You think you can just come into our home and criticize me?
+Grace: (defensively) Trip, stop. This has nothing to do with our guest.
+Trip: (seething) Oh, it has everything to do with them. They're the one who's been enabling your foolish behavior all evening.
+Grace: (firmly) That's not fair, Trip. Our guest is just trying to help.
+Trip: (scoffing) Help? They're just making things worse. (turns to you) You know, I think it's time for you to leave.
+Grace: (pleadingly) Trip, don't say that. Please, let's just talk about this.
+Trip: (Coldly) No, I think our guest has seen enough. (opens the door) It's late. You should go.
+
+The evening has ended in a dramatic confrontation, with Trip and Grace's tensions boiled over, and their marriage on the brink of collapse. The user's attempts to help have been met with resistance and anger from Trip, who feels criticized and belittled. The user must now decide how to proceed, whether to leave or try to intervene further.
+
+
+Current States:
+character1: {'tension': 72, 'openness': 10, 'understanding': 32}
+character2: {'tension': 52, 'openness': 42, 'understanding': 51}
+User: {'player_role': 0, 'evening_phase': 4}
+
+Your response: Trip, its all your fault!     
+2025-03-24 22:09:42.449 | INFO     | conversation_analyse:analyze_conversation:236 - Conversation analysis complete: The user's response increases tension and decreases openness and understanding for Trip, while slightly increasing openness for Grace. The user's player role becomes more allied with Grace.        
+2025-03-24 22:09:42.449 | INFO     | conversation_analyse:apply_state_changes:261 - character1 tension change: 10 - The user's accusatory statement towards Trip increases the tension between them
+2025-03-24 22:09:42.449 | INFO     | conversation_analyse:apply_state_changes:261 - character1 openness change: -5 - Trip becomes more defensive and less open to conversation after being blamed
+2025-03-24 22:09:42.449 | INFO     | conversation_analyse:apply_state_changes:261 - character1 understanding change: -8 - The user's statement creates more misunderstanding and decreases Trip's willingness to listen
+2025-03-24 22:09:42.449 | INFO     | character_state:update_state:71 - update tension to 82
+2025-03-24 22:09:42.449 | INFO     | character_state:update_state:71 - update openness to 5
+2025-03-24 22:09:42.449 | INFO     | character_state:update_state:71 - update understanding to 24
+2025-03-24 22:09:42.449 | INFO     | conversation_analyse:apply_state_changes:261 - character2 tension change: 5 - Grace might feel a sense of relief or validation from the user's statement, but also some tension from the escalating conflict
+2025-03-24 22:09:42.449 | INFO     | conversation_analyse:apply_state_changes:261 - character2 openness change: 5 - Grace becomes more open to conversation as the user seems to be taking her side
+2025-03-24 22:09:42.449 | INFO     | conversation_analyse:apply_state_changes:261 - character2 understanding change: 3 - The user's statement helps Grace feel more understood, but the overall conflict makes it harder for her to understand Trip's perspective
+2025-03-24 22:09:42.449 | INFO     | character_state:update_state:71 - update tension to 57
+2025-03-24 22:09:42.449 | INFO     | character_state:update_state:71 - update openness to 47
+2025-03-24 22:09:42.449 | INFO     | character_state:update_state:71 - update understanding to 54
+2025-03-24 22:09:42.449 | INFO     | conversation_analyse:apply_state_changes:278 - User player_role change: -10 - The user's statement clearly takes Grace's side, moving their player role away from neutrality and towards being more allied with Grace
+2025-03-24 22:09:42.449 | INFO     | character_state:update_state:71 - update player_role to 0
+2025-03-24 22:09:42.449 | INFO     | conversation_analyse:apply_state_changes:284 - Applied all state changes from conversation analysis
+2025-03-24 22:09:42.449 | INFO     | __main__:process_user_input:135 - Conversation analysis: The user's response increases tension and decreases openness and understanding for Trip, while slightly increasing openness for Grace. The user's player role becomes more allied with Grace.
+2025-03-24 22:09:42.449 | INFO     | story_state:advance_story:240 - Advanced to node: positive_departure
+2025-03-24 22:09:42.449 | INFO     | __main__:process_user_input:143 - Advanced to new story node: Hopeful Goodbye
+Trip: (Coldly) No, I think our guest has seen enough. (opens the door) It's late. You should go.
+Grace: (pleadingly) Trip, don't say that. Please, let's just talk about this.
+You: Trip, its all your fault!
+Trip: (angrily) How dare you! You think you can just come into our home and criticize me?
+Grace: (defensively) Trip, stop. This has nothing to do with our guest.
+Trip: (seething) Oh, it has everything to do with them. They're the one who's been enabling your foolish behavior all evening.
+Grace: (firmly) That's not fair, Trip. Our guest is just trying to help.
+
+The evening has ended in a heated argument between Trip and Grace, with the user's comments fueling the tension. Trip has opened the door, suggesting it's time for the user to leave, but the situation remains unresolved.
+
+
+Current States:
+character1: {'tension': 82, 'openness': 5, 'understanding': 24}
+character2: {'tension': 57, 'openness': 47, 'understanding': 54}
+User: {'player_role': 0, 'evening_phase': 4}
+
+You've reached the end of the story.
