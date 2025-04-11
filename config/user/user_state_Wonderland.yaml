@@ -1,26 +1,69 @@
-# Player Influence
-player_role:
-  desc: "Whether player is perceived as neutral or taking sides"
-  min: 0
-  max: 100
-  default: 50
-  rules:
-    0-30: "Allied with Grace"
-    31-70: "Maintaining neutral mediator role"
-    71-100: "Allied with Trip"
+# Player State for Alice in Wonderland Interactive Storytelling Game
 
+player:
+  sanity:
+    desc: "The player's grasp on reality within Wonderland."
+    min: 0
+    max: 100
+    default: 75
+    rules:
+      0-25: "Questioning reality; prone to hallucinations."
+      26-50: "Struggling to reconcile Wonderland's logic."
+      51-75: "Accepting the absurdity but still grounded."
+      76-100: "Embracing Wonderland's whimsy."
 
-# Narrative Structure
-evening_phase:
-  desc: "The progression of the evening's events"
-  min: 1
-  max: 5
-  default: 1
-  no_analyse: True
-  rules:
-    "1": "Arrival and initial conversation"
-    "2": "Pre-dinner drinks and increasing openness"
-    "3": "Dinner and substantive discussion"
-    "4": "After-dinner confrontation of key issues"
-    "5": "Evening conclusion and relationship decision point"
+  trust:
+    desc: "The player's level of trust in Wonderland's inhabitants."
+    min: 0
+    max: 100
+    default: 50
+    rules:
+      0-25: "Highly suspicious and distrustful."
+      26-50: "Cautious and skeptical."
+      51-75: "Willing to trust some characters."
+      76-100: "Trusting and open to all."
 
+  inventory:
+    desc: "Items the player has collected during their journey."
+    items: []
+
+  current_location:
+    desc: "The player's current location within Wonderland."
+    default: "rabbit_hole"
+
+  knowledge:
+    desc: "Information the player has learned about Wonderland."
+    facts: []
+
+  relationship_mad_hatter:
+    desc: "Relationship level with the Mad Hatter"
+    min: 0
+    max: 100
+    default: 50
+    rules:
+      0-25: "Distrustful, finds him annoying"
+      26-50: "Unsure, finds him confusing"
+      51-75: "Friendly, enjoys his eccentricities"
+      76-100: "Close friends, understands his madness"
+
+  relationship_queen_of_hearts:
+    desc: "Relationship level with the Queen of Hearts"
+    min: 0
+    max: 100
+    default: 50
+    rules:
+      0-25: "Terrified, avoids her"
+      26-50: "Respectful, obeys her rules"
+      51-75: "Wary, but not intimidated"
+      76-100: "Defiant, challenges her authority"
+
+  relationship_cheshire_cat:
+    desc: "Relationship level with the Cheshire Cat"
+    min: 0
+    max: 100
+    default: 50
+    rules:
+      0-25: "Confused, avoids him"
+      26-50: "Intrigued, seeks his guidance"
+      51-75: "Trusting, follows his advice"
+      76-100: "Understands his riddles, enjoys his company"

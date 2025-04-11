@@ -29,7 +29,6 @@ mad_hatter_tea_party:
       next_node: "solve_riddle"
       effects: ["user.logic += 15"]
     -
-
       condition: ["user.choice == 'observe_quietly'"]
       next_node: "learn_about_characters"
       effects: ["user.wonder += 5"]
