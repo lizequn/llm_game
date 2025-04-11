@@ -1,4 +1,4 @@
 defaults:
-  - character: character_state
-  - user: user_state
-  - story: test_story
+  - character: character_state_Facade
+  - user: user_state_Facade
+  - story: Facade_story

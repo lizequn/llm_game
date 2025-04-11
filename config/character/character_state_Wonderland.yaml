@@ -1,0 +1,87 @@
+# Character State for Alice in Wonderland Interactive Storytelling Game
+
+Alice:
+  curiosity:
+    desc: "Alice's level of curiosity and willingness to explore the unknown"
+    min: 0
+    max: 100
+    default: 70
+    rules:
+     0-30: "Cautious and hesitant to explore"
+     31-60: "Moderately intrigued but careful"
+     61-80: "Eager to investigate new surroundings"
+     81-100: "Uncontrollably driven by curiosity"
+
+wonder:
+    desc: "Alice's sense of awe and fascination with the whimsical world"
+    min: 0
+    max: 100
+    default: 50
+    rules:
+      0-30: "Skeptical of the fantastical elements"
+      31-60: "Appreciative of the oddities but grounded"
+      61-80: "Deeply enchanted by the magical aspects"
+      81-100: "Completely immersed in the wonderland's charm"
+
+logic:
+    desc: "Alice's ability to apply rational thinking in a nonsensical world"
+    min: 0
+    max: 100
+    default: 40
+    rules:
+      0-30: "Struggling to make sense of anything"
+      31-60: "Occasionally finding patterns amidst chaos"
+      61-80: "Using reason to navigate challenges effectively"
+      81-100: "Masterfully applying logic to solve problems"
+
+Mad Hatter:
+  eccentricity:
+    desc: "Mad Hatter's level of unpredictability and quirky behavior"
+    min: 0
+    max: 100
+    default: 80
+    rules:
+      0-30: "Relatively subdued and coherent"
+      31-60: "Moderately peculiar with occasional bursts of oddity"
+      61-80: "Highly unpredictable and whimsical"
+      81-100: "Utterly chaotic and nonsensical"
+
+Queen of Hearts:
+  temper:
+    desc: "The Queen's level of anger and impulsiveness"
+    min: 0
+    max: 100
+    default: 90
+    rules:
+      0-30: "Calm and composed demeanor"
+      31-60: "Irritated but restrained in actions"
+      61-80: "Quick to anger with frequent outbursts"
+      81-100: "Explosively furious and irrational"
+
+Cheshire Cat:
+  mystery:
+    desc: "Cheshire Cat's level of cryptic behavior and enigmatic presence"
+    min: 0
+    max: 100
+    default: 75
+    rules:
+      0-30: "Transparent and straightforward interactions"
+      31-60: "Occasionally cryptic with hints of mischief"
+      61-80: "Frequently speaking in riddles and puzzles"
+      81-100: "Utterly elusive, leaving others bewildered"
+
+# Core Relationship States
+
+relationships:
+  Alice_and_Mad_Hatter:
+    tension:
+      desc: "The level of tension between Alice and Mad Hatter during interactions"
+      min: 0
+      max: 100
+      default: 40
+      rules:
+        0-30: "Friendly banter with mutual understanding"
+        31-60: "Mild disagreements but overall amicable"
+        61-80: "Frequent clashes due to differing perspectives"
+        81-100: "Hostile exchanges with little common ground"
+

@@ -1,0 +1,91 @@
+# Story State for Alice in Wonderland Interactive Storytelling Game
+
+story_background: >
+  You are roleplaying as Alice, a curious and adventurous girl who has fallen into Wonderland—a magical and nonsensical world filled with peculiar characters and unpredictable events. The story unfolds as Alice navigates through this whimsical land, encountering challenges, making choices, and uncovering the secrets of Wonderland. Your decisions will shape Alice's journey and interactions with the inhabitants of this fantastical realm.
+
+story_state:
+
+arrival:
+  name: "Arrival in Wonderland"
+  description: >
+    Alice awakens in a strange and enchanting land after falling down the rabbit hole. She finds herself in a forest surrounded by talking flowers and peculiar creatures. A path splits into two directions: one leads to a tea party, while the other leads deeper into the forest.
+  next_state:
+    -
+      condition: ["user.choice == 'tea_party'"]
+      next_node: "mad_hatter_tea_party"
+      effects: ["user.curiosity += 10"]
+    -
+      condition: ["user.choice == 'forest_path'"]
+      next_node: "enchanted_forest"
+      effects: ["user.wonder += 10"]
+
+mad_hatter_tea_party:
+  name: "Mad Hatter's Tea Party"
+  description: >
+    Alice arrives at a chaotic tea party hosted by the Mad Hatter, March Hare, and Dormouse. The conversation is riddled with nonsensical riddles and peculiar customs. Alice can choose to engage in the riddles or observe quietly.
+  next_state:
+    -
+      condition: ["user.choice == 'engage_riddles'"]
+      next_node: "solve_riddle"
+      effects: ["user.logic += 15"]
+    -
+
+      condition: ["user.choice == 'observe_quietly'"]
+      next_node: "learn_about_characters"
+      effects: ["user.wonder += 5"]
+
+enchanted_forest:
+  name: "Enchanted Forest Encounter"
+  description: >
+    Alice ventures deeper into the forest and meets the Cheshire Cat, who offers cryptic advice about navigating Wonderland. Alice can choose to follow his advice or explore on her own.
+  next_state:
+    condition: ["user.choice == 'follow_advice'"]
+    next_node: "queen_of_hearts_castle"
+    effects: ["user.mystery += 10"]
+
+    condition: ["user.choice == 'explore_alone'"]
+    next_node: "hidden_grove"
+    effects: ["user.curiosity += 10"]
+
+queen_of_hearts_castle:
+  name: "Confrontation with the Queen of Hearts"
+  description: >
+    Alice arrives at the Queen of Hearts' castle, where she witnesses a trial over stolen tarts. The Queen demands Alice's loyalty. Alice can choose to challenge the Queen's authority or play along to gather information.
+  next_state:
+    condition: ["user.choice == 'challenge_queen'"]
+    next_node: "trial_conflict"
+    effects: ["user.logic += 20", "character1.tension += 25"]
+
+    condition: ["user.choice == 'play_along'"]
+    next_node: "gain_information"
+    effects: ["user.wonder += 10", "character1.openness += 15"]
+
+hidden_grove:
+  name: "Discovery in the Hidden Grove"
+  description: >
+    Alice discovers a hidden grove filled with magical artifacts. She encounters a wise caterpillar who offers cryptic advice about her journey. Alice can choose to ask questions or take an artifact.
+  next_state:
+    condition: ["user.choice == 'ask_questions'"]
+    next_node: "caterpillar_insights"
+    effects: ["user.logic += 10", "character2.openness += 15"]
+
+    condition: ["user.choice == 'take_artifact'"]
+    next_node: "artifact_power"
+    effects: ["user.wonder += 20", "character2.mystery += 10"]
+
+trial_conflict:
+  name: "Trial Escalation"
+  description: >
+    Alice challenges the Queen during the trial, causing chaos in the courtroom. The Queen orders her guards to capture Alice, but she must use her wit to escape.
+  next_state:
+    condition: ["user.logic >= 50"]
+    next_node: "escape_plan_success"
+    effects: ["character1.tension -= 20"]
+
+gain_information:
+  name: "Gathering Secrets"
+  description: >
+    By playing along with the Queen's demands, Alice overhears vital information about Wonderland's secrets and learns about a way to return home.
+  next_state:
+    condition: ["user.wonder >= 50"]
+    next_node: "return_home_path"
